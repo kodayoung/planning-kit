@@ -1,0 +1,61 @@
+# 화면 스펙 예시. 파일 하나가 화면 하나입니다. 저장하면 새로고침 없이 반영됩니다.
+#
+#   screen  파일 식별자
+#   route   이 스펙을 적용할 화면 주소
+#   title   툴바·점검 결과에 보일 이름
+#   kb      기획안 KB 의 화면 키. 아래 요소의 kb: 번호는 이 화면 안 항목 번호입니다
+#   issue   이 화면의 코멘트가 저장될 깃랩 이슈 번호
+#
+# locator 는 "역할 + 보이는 글자"로 요소를 찾습니다. 화면에 보이는 글자 그대로 쓰면 됩니다.
+#   role: button | link | textbox | table | checkbox | combobox | heading | img ...
+#   name: 화면에 보이는 글자 (버튼 문구, 입력창 안내문구 등). exact: false 면 부분 일치
+#   within: 같은 글자가 여러 군데 있을 때 범위를 좁히는 상위 요소
+#   css: 위 방법으로 안 잡힐 때만 마지막 수단
+#
+# description / behavior / states / since 는 KB 가 없을 때 직접 채우는 칸입니다.
+# npm run gen 으로 KB 에서 찍어낸 파일은 specs/generated/ 에 들어가고, 여기 있는 파일이 우선합니다.
+
+screen: login
+route: /login
+title: 로그인
+kb: 로그인-로그인
+issue:
+
+elements:
+  - id: login-01
+    name: 아이디 입력창
+    locator: { role: textbox, name: 아이디, exact: false }
+    kb: 1
+    description:
+    behavior:
+    states:
+    since:
+
+  - id: login-02
+    name: 비밀번호 입력창
+    locator: { role: textbox, name: 비밀번호, exact: false }
+    kb: 1
+    description:
+    behavior:
+    states:
+    since:
+
+  - id: login-03
+    name: 로그인 버튼
+    locator: { role: button, name: 로그인 }
+    kb: 2
+    description:
+    behavior:
+    states:
+      - 아이디·비밀번호가 비어 있으면 비활성 상태다.
+      - 틀리면 "아이디 또는 비밀번호가 일치하지 않습니다." 안내가 뜬다.
+    since:
+
+  - id: login-04
+    name: 아이디 저장 체크박스
+    locator: { role: checkbox }
+    kb: 1
+    description:
+    behavior:
+    states:
+    since:

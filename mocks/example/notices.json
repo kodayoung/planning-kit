@@ -1,0 +1,7 @@
+{
+  "items": [
+    { "id": 1, "title": "예시 공지 · 점검 안내", "author": "관리자", "createdAt": "2026-09-01T09:00:00.000Z", "pinned": true },
+    { "id": 2, "title": "예시 공지 · 새 기능 소개", "author": "관리자", "createdAt": "2026-09-10T09:00:00.000Z", "pinned": false }
+  ],
+  "total": 2
+}

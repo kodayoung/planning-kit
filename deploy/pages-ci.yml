@@ -1,0 +1,14 @@
+# 공유 링크를 깃랩 Pages 로 내보낸다.
+#
+# 이 파일은 main 에 있지 않고 `pages` 가지의 뿌리로 복사돼 들어간다 (scripts/deploy-pages.sh).
+# 그 가지에는 이미 구워진 public/ 만 들어 있다. 도구 소스는 main 에 있고,
+# 여기는 결과물만 담는 일회용 가지라 배포할 때마다 통째로 덮어쓴다.
+# 그래서 8MB 짜리 빌드 결과가 저장소 역사에 쌓이지 않는다.
+
+pages:
+  stage: deploy
+  script:
+    - echo "이미 만들어진 public/ 을 그대로 내보냅니다"
+  artifacts:
+    paths:
+      - public

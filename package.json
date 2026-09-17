@@ -1,0 +1,28 @@
+{
+  "name": "planning-kit",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "프론트 레포를 수정하지 않고 로컬 화면 위에 목업·설명 스티커·코멘트를 얹는 기획 도구",
+  "scripts": {
+    "dev": "node --env-file-if-exists=.env proxy/server.js",
+    "gen": "node --env-file-if-exists=.env scripts/gen-specs.js",
+    "check": "node --env-file-if-exists=.env scripts/check-specs.js",
+    "snapshot": "node --env-file-if-exists=.env scripts/snapshot.js",
+    "snapshots": "node --env-file-if-exists=.env scripts/snapdiff.js --list",
+    "snapdiff": "node --env-file-if-exists=.env scripts/snapdiff.js",
+    "setup": "node scripts/setup.js",
+    "bundle": "node --env-file-if-exists=.env scripts/bundle.js",
+    "deploy": "bash scripts/deploy-pages.sh"
+  },
+  "dependencies": {
+    "http-proxy": "^1.18.1",
+    "yaml": "^2.9.1"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "devDependencies": {
+    "playwright": "^1.63.0"
+  }
+}

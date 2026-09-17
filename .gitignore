@@ -1,0 +1,9 @@
+node_modules/
+.env
+.omc/
+.playwright-mcp/
+check-report.json
+public/
+.cache/
+mocks/recorded/
+.builds/
